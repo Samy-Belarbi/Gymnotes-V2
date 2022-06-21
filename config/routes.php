@@ -5,7 +5,7 @@ return [
         'App\Controllers\HomeController',
         'show'
     ],
-    '/rticles' => [
+    '/articles' => [
         'App\Controllers\HomeController',
         'show'
     ],

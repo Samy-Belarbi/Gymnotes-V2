@@ -1,0 +1,160 @@
+@mixin classicTransi {
+    transition: all 0.3s ease-in-out;
+}
+
+#section-3-homepage {
+    padding: 3em 0em;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+
+    h3 {
+        display: inline;
+        color: white;
+        font-family: "Jumper";
+        font-size: 3em;
+        width: 60%;
+        text-align: center;
+        span {
+            font-size: 1em;
+            font-family: "Jumper";
+            color: var(--gymBlue);
+            display: inline-block;
+            animation: shake 2s infinite;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    }  
+
+    #cards-homepage {
+
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
+
+        #cards-images {
+
+            width: 60%;
+            height: 700px;
+            scroll-behavior: smooth;
+            justify-content: flex-end;
+
+            ul {
+                flex-direction: row;
+                align-items: center;
+                position: relative;
+
+                li {
+                    
+                    width: 300px;
+                    position: absolute;
+                    bottom: 0;
+                    @include classicTransi;
+                    
+                    img {
+                        max-height: 100%;
+                        border-radius: 30px;
+                    }
+                }
+
+                :nth-child(1) {
+                    left: 80px;
+                    z-index: 1;
+                }
+
+                :nth-child(2) {
+                    left: 160px;
+                    z-index: 2;
+                }
+                
+                :nth-child(3) {
+                    width: 400px;
+                    z-index: 5;
+                    left: 240px;
+                }
+
+                :nth-child(4) {
+                    z-index: 2;
+                    left: 400px;
+                }
+
+                :nth-child(5) {
+                    z-index: 1;
+                    left: 480px;
+                }
+
+            }
+        }
+    
+        #cards-title {
+
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 2em;
+
+            #titles {
+                flex-direction: row;
+                align-items: center;
+                padding-bottom: 100px;
+                gap: 20px;
+
+                ul {
+                    align-items: center;
+                    li {
+                        font-size: 1.8em;
+                        font-weight: 300;
+                        text-align: center;
+                        letter-spacing: 1px;
+                        color: white;
+                        font-family: "jumper";
+                        opacity: 0.5;
+                        cursor: pointer;
+                        @include classicTransi;
+                    }
+
+                    :nth-child(3) {
+                        opacity: 1;
+                    }
+                }
+        
+                div {
+                    gap: 5px;
+        
+                    span {
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 10px;
+                        background-color: white;
+                        opacity: 0.5;
+                        @include classicTransi;
+                    }
+
+                    :nth-child(3) {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .gymnotesBtn {
+                padding: 0.2em 1em;
+                font-size: 1.2em;
+            }
+        }
+    }
+
+
+}

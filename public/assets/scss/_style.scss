@@ -1,0 +1,21 @@
+// Mixins & Global Variables
+@use 'general/variables/variables.scss';
+
+// Reseter & Common
+@use 'reseters/reseter.scss';
+@use 'reseters/common.scss';
+
+// NAVBAR & FOOTER
+@use 'general/navbar.scss';
+@use 'general/footer.scss';
+
+// HOMEPAGE
+@use 'homepage/typewriter';
+@use 'homepage/whatIsGymnotes';
+@use 'homepage/trackProgress';
+@use 'homepage/beginner';
+@use 'homepage/freecontent';
+@use 'homepage/lastarticles';
+
+// INTERVIEW
+@use 'interview/interview';

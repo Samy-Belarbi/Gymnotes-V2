@@ -1,0 +1,64 @@
+#free-content {
+    background-size: cover;
+    background-image: url("../../assets/img/background-interview.png");
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    #preconceived {
+        padding: 3em 0;
+        width: 50%;
+        gap: 2em;
+
+        h3 {
+            width: 80%;
+            font-family: "Jumper";
+            font-size: 3em;
+            letter-spacing: 3px;
+            span {
+                font-size: 1.3em;
+                font-family: "Jumper";
+                color: var(--gymYellow);
+            }
+        }
+
+        p {
+            width: 60%;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+
+        :last-child {
+            color: var(--gymYellow);
+            font-weight: 800;
+            font-size: 1.2em;
+        }
+    }
+
+    #do-the-test {
+        width: 30%;
+        align-items: center;
+
+        a {
+            padding: 1em 2em;
+            border-radius: 15px;
+            color: white;
+            font-family: "Jumper";
+            font-size: 1.5em;
+            background-color: var(--gymYellow); 
+            transition: all 0.3s ease-in-out;
+            text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+
+            border: 1px solid var(--gymYellow);
+
+            &:hover {
+                background-color: var(--gymBlack);
+                transform: scale(1.05);
+
+            }
+        }
+    }
+}

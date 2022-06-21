@@ -1,0 +1,56 @@
+#section-4-homepage {
+    padding: 4em 0em;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-image: url("../../assets/img/beginner.png");
+
+    gap: 2em;
+
+    h3 {
+        font-family: "Jumper";
+        font-size: 5em;
+        letter-spacing: 3px;
+    }
+
+    #offers-container {
+        flex-direction: row;
+        justify-content: center;
+        width: 80%;
+
+        gap: 10%;
+
+        div {
+            width: 40%;
+            align-items: center;
+            justify-content: center;
+            gap: 3em;
+
+            h4, p {
+                text-align: center;
+            }
+
+            h4 {
+                border-bottom: 1px solid black;
+                padding-bottom: 1em;
+                font-weight: 800;
+                font-size: 24px;
+            }
+
+            a {
+                padding: 0.5em 0em;
+                width: 100%;
+                text-align: center;
+                font-family: "Jumper";
+                color: white;
+                background-color: var(--gymBlue);
+                border-radius: 10px;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}

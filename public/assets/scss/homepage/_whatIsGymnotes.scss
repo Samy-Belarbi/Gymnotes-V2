@@ -1,0 +1,80 @@
+@mixin classicTransi {
+    transition: all 0.3s ease-in-out;
+}
+
+#section-2-homepage {
+    background-color: black;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2em 0em;
+    position: relative;
+
+    #whatIsGymnotes {
+        z-index: 1;
+        width: 50%;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        h3 {
+            font-size: 3.5em;
+            font-family: "Jumper";
+            line-height: 1.3em;
+            font-weight: 900;
+            color: white;
+            padding-bottom: 0.7em;
+            .gymnotes {
+                font-size: 1.3em;
+                font-family: "jumper";
+                color: var(--gymYellow);
+            }
+        }
+
+        h4 {
+            color: var(--gymYellow);
+        }
+
+        p {
+            color: white;
+            width: 70%;
+            padding-bottom: 2em;
+        }
+
+        .gymnotesBtn {
+            width: fit-content;
+            padding: 0.2em 4em;
+            border-color: var(--gymYellow);
+
+            background: linear-gradient(to right, var(--gymYellow) 50%, transparent 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+
+            &:hover {
+                transform: scale(1.05);
+                background-position: left bottom;
+                color: var(--gymBlack);
+            }
+        }
+
+    }
+
+    #phone-container {
+        width: 40%;
+
+        .phone {
+            width: 100%;
+            height: fit-content;
+            z-index: 3;
+        }
+
+    }
+
+    .glow {
+        position: absolute;
+        z-index: 0;
+        top: -150px;
+        right: 0;
+        height: fit-content;
+    }
+}

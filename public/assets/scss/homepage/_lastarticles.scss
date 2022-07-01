@@ -4,7 +4,7 @@
 
 #last-articles {
     background-color: black;
-    padding: 2em 0em;
+    padding: 8em 0em 4em;
     align-items: center;
     width: 100%;
 
@@ -60,12 +60,13 @@
         #button-left,
         #button-right {
             position: absolute;
-            top: 25%;
+            padding: 0;
+            top: 35%;
+            height: auto;
             cursor: pointer;
             background-color: transparent;
             font-size: 30px;
             border: none;
-            padding: 10px;
             color: white;
         }
 
@@ -98,4 +99,11 @@
     }
   
 
+}
+
+
+@media (max-width: 769px) {
+    #last-articles {
+        padding-top: 4em;
+    }
 }

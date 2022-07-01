@@ -4,7 +4,7 @@
 
 #section-1-homepage {
     width: 100%;
-    padding: 8em 0em;
+    padding: 22rem 0em;
     background-size: cover;
     background-image: url("../../assets/img/background.png");
     align-items: center;
@@ -19,8 +19,8 @@
 
     #typewriter-container {
         width: 100%;
-        padding-top: 4em;
-        gap: 20px;
+        padding: 4em 4em 0em;
+        gap: 3em;
 
         .typewriter {
             width: 100%;
@@ -138,9 +138,58 @@
         }
     }
 
-    .gymnotesBtn {
-        margin-top: 4em;
-        padding: 0.2em 1em;
+    .gymnotes-btn {
+        margin-top: 8em;
+        padding: 0.5em 1em 0.3em 1em;
         z-index: 20;
+    }
+}
+
+// MACBOOK 13
+@media (max-width: 1280px) {
+    #section-1-homepage {
+        padding: 10rem 0em;
+
+        .gymnotes-btn {
+            margin-top: 6em;
+        }
+    }
+}
+
+// IPAD
+@media (max-width: 769px) {
+    #section-1-homepage {
+        padding: 0 0 10rem;
+        #typewriter-container { 
+            padding: 10em 0em 0em;
+            .typewriter {
+                justify-content: space-between;
+                padding: 0 6em;
+                .session-container {
+                    padding: 0;
+
+                    h2 {
+                        font-size: 2em;
+                    }
+
+                    &:hover {
+                        p {
+                            font-size: 1em;
+                            width: 70%;
+                        }
+                    }
+                }
+            }
+
+            .step-number {
+                
+                p {
+                    font-size: 2em;
+                }
+                span {
+                    display: none;
+                }
+            }
+        }
     }
 }

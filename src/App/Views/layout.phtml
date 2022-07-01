@@ -12,7 +12,15 @@
 
 <body>
 
-    <header>
+    <div id="black-background"></div>
+
+    <button type="button" id="hamburger-button">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </button>
+
+    <header id="header">
 
         <div id="logo-navbar">
             <img src="../public/assets/icons/gymnotes-logo.png" alt="logo-gymnotes">
@@ -26,15 +34,15 @@
                 <li><a href="<?= url('/start-session') ?>" class="lets-go-btn">LET'S GO</a></li>
                 <li><a href="<?= url('/tracker') ?>">Tracker</a></li>
 
-                <?php if ($user === null) : ?>
+                <?php if (!isset($user)) : ?>
 
-                    <li><a href="<?= url('/register') ?>">Connexion / Inscription</a></li>
+                    <li><a href="<?= url('/access') ?>">Connexion / Inscription</a></li>
 
                 <?php else : ?>
 
                     <li>
-                        <a href="<?= url('/profile') . '?id=' . htmlentities($user->getId) ?>">
-                            <?= htmlentities($user->getFirstName) ?>
+                        <a href="<?= url('/profile') . '?id=' . htmlentities($user->getId()) ?>">
+                            <?= htmlentities($user->getFirstName()) ?>
                         </a>
                     </li>
 
@@ -48,12 +56,13 @@
     </header>
 
     <main>
+        <a id="top"></a>
         <?php require $template . '.phtml'; ?>
     </main>
 
     <footer>
 
-        <a href="#section-1-homepage" class="return-to-top">REVENIR EN HAUT DE LA PAGE ↑</a>
+        <a href="#top" class="return-to-top">REVENIR EN HAUT DE LA PAGE ↑</a>
 
         <div class="footer-container">
 

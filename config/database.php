@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'host' => '127.0.0.1',
+    'host' => 'localhost',
     'dbname' => 'Gymnotes',
     'user' => 'root',
     'password' => ''

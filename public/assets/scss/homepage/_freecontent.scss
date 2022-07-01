@@ -8,7 +8,7 @@
     color: white;
 
     #preconceived {
-        padding: 3em 0;
+        padding: 8em 0;
         width: 50%;
         gap: 2em;
 
@@ -43,7 +43,7 @@
         align-items: center;
 
         a {
-            padding: 1em 2em;
+            padding: 1em 2em 0.8em;
             border-radius: 15px;
             color: white;
             font-family: "Jumper";
@@ -59,6 +59,58 @@
                 transform: scale(1.05);
 
             }
+        }
+    }
+}
+
+// MACBOOK 13
+@media (max-width: 1280px) {
+    #free-content {
+        #preconceived {
+            h3 {
+                font-size: 2em;
+            }
+
+            p {
+                width: 70%;
+            }
+
+            :last-child {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 769px) {
+    #free-content {
+        flex-direction: column;
+        padding-bottom: 4em;
+
+        #preconceived {
+            align-items: center;
+            width: 80%;
+            padding: 4em 0;
+
+            h3 {
+                text-align: center;
+                font-size: 3em;
+            }
+
+            p {
+                width: fit-content;
+                text-align: center;
+                font-size: 20px;
+            }
+
+            a {
+                width: fit-content;
+            }
+        }
+
+        #do-the-test {
+            width: fit-content;
         }
     }
 }

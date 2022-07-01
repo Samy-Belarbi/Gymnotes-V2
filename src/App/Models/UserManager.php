@@ -3,18 +3,19 @@
 namespace App\Models;
 
 use App\Models\UserModel;
+use Library\Core\AbstractModel;
 use PDO;
 
-class UserManager {
+class UserManager extends AbstractModel {
 
     public function createUser(UserModel $user): void
     {
-        $userId = $this->db->execute('INSERT INTO Users (Firstname, Lastname, Gender, Age, Mail, Password) VALUES (:firstname, :lastname, :gender, :age, :mail, :password)', [
+        $this->db->execute('INSERT INTO users (Firstname, Lastname, Gender, Age, Mail, Password) VALUES (:firstname, :lastname, :gender, :age, :mail, :password)', [
             'firstname' => $user->getFirstName(),
             'lastname' => $user->getLastName(),
+            'mail' => $user->getMail(),
             'gender' => $user->getGender(),
             'age' => $user->getAge(),
-            'mail' => $user->getMail(),
             'password' => $user->getPassword()
         ]);
         
@@ -22,34 +23,28 @@ class UserManager {
     
     function findById(int $id) : ?UserModel {
 
-        $query = $this->database->prepare('SELECT * FROM Users WHERE id = :id');
-        $query->execute([
+        $query = $this->db->getResults('SELECT * FROM users WHERE ID = :id', [
             'id' => $id
         ]);
         
-        $rawData = $query->fetch(PDO::FETCH_ASSOC);
-        
-        if ($rawData === false) {
+        if ($query === null) {
             return null;
         }
         
-        return UserModel::createUserFromMysqlData($rawData);
+        return UserModel::createUserFromMysqlData($query);
 
     }
 
-    public function findByEmail(string $email): ?UserModel
+    public function findByEmail(string $mail): ?UserModel
     {
-        $query = $this->database->prepare('SELECT * FROM users WHERE email = :email');
-        $query->execute([
-            'email' => $email
+        $query = $this->db->getResults('SELECT * FROM users WHERE mail = :mail', [
+            'mail' => $mail
         ]);
-        
-        $rawData = $query->fetch(PDO::FETCH_ASSOC);
-        
-        if ($rawData === false) {
+      
+        if (empty($query)) {
             return null;
         }
         
-        return UserModel::createUserFromMysqlData($rawData);
+        return UserModel::createUserFromMysqlData($query);
     }
 }

@@ -2,18 +2,15 @@
     transition: all 0.3s ease-in-out;
 }
 
-main {
-    background-color: var(--gymBlack);
-}
-
-#container-interview {
-    width: 90%;
+#interview {
+    width: 100%;
     min-height: 100vh;
     height: fit-content;
     margin: auto;
     justify-content: center;
     align-items: center;
-    padding-top: 2em;
+    padding: 2em 0;
+    background-color: var(--gymBlack);
 
     gap: 10px;
 
@@ -22,6 +19,7 @@ main {
         font-size: 50px;
         color: var(--gymYellow);
         text-align: center;
+        padding-bottom: 1em;
     }
 
     button {
@@ -86,6 +84,8 @@ main {
                     padding-left: 1em;
                     padding-right: 1em;
 
+                    border-radius: 20px;
+
                     font-weight: 700;
                     font-size: 20px;
 
@@ -106,7 +106,7 @@ main {
         flex-direction: row;
         justify-content: center;
         gap: 10px;
-        padding: 1em;
+        padding: 2em 0;
     }
 
     #buttonGenerate {
@@ -116,14 +116,15 @@ main {
 }
 
 @media (max-width: 1000px) {
-    #container-interview {
-
+    #interview {
+        padding-top: 4em;
         h2 {
-            font-size: 40px;
+            font-size: 30px;
         }
 
-        #slider {
+        #slider-interview {
             flex-direction: column;
+
 
             h3 {
                 font-size: 20px;

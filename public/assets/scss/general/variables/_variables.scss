@@ -16,15 +16,16 @@
 }
 
 // GLOBAL CLASSES //
-.gymnotesBtn {
+.gymnotes-btn {
     font-size: 1.2em;
     cursor: pointer;
     color: white;
-
+    border: none;
     background: linear-gradient(to right, var(--gymBlue) 50%, transparent 50%);
     background-size: 200% 100%;
     background-position: right bottom;
-    border: 2px solid var(--gymBlue);
+    -webkit-box-shadow: inset 0px 0px 0px 2px var(--gymBlue); 
+    box-shadow: inset 0px 0px 0px 2px var(--gymBlue);
 
     font-family: "Jumper";
 
@@ -33,7 +34,7 @@
     @include classicTransi;
 
     &:hover {
-        transform: scale(1.05);
         background-position: left bottom;
+        transform: scale(1.05);
     }
 }

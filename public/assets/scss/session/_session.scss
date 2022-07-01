@@ -1,52 +1,22 @@
-#session-container-1 {
-
+#start-or-create {
     width: 100%;
-    height: 60vh;
-    background-color: var(--gymBlack);
-    align-items: center;
+    padding: 12rem 0 8rem;
     justify-content: center;
-    gap: 40px;
+    background-color: black;
+    align-items: center;
+    gap: 50px;
 
-    #session-days {
-        flex-direction: row;
-        width: 80%;
-        justify-content: space-evenly;
-        height: fit-content;
-        flex-wrap: wrap;
-
-        label {
-            height: 250px;
-            width: 12%;
-            background-color: rgb(188, 188, 188);
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0px 0px 5px #00000024;
-            font-size: 20px;
-
-            @include classicTransi;
-        }
-
-
-        .checked {
-            transform: scale(1.05);
-            background-color: var(--gymBlue);
-            color: white;
+    #buttons-session-container {
+        height: 500px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        a {
+            width: fit-content;
+            text-align: center;
+            padding: 0.5em 1em;
         }
     }
 }
 
-// Création des exercices
-
-#session-container-2 {
-    width: 100%;
-    height: fit-content;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    justify-content: center;
-    align-items: center;
-
-    background-color: rgb(207, 207, 207);
-
-    gap: 20px;
-
-}

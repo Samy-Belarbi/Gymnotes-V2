@@ -5,7 +5,7 @@ namespace App\Controllers;
 use Library\Core\AbstractController;
 use App\Models\UserManager;
 
-class CreateSessionController extends AbstractController
+class SessionController extends AbstractController
 {
     public function show(): void
     {
@@ -14,14 +14,16 @@ class CreateSessionController extends AbstractController
         if (isset($_SESSION['user_id'])) {
             $userManager = new UserManager();
             $user = $userManager->findById($_SESSION['user_id']);
-        } 
-        // else {
-        //     header('Location: ' . url('/login'));
-        // }
+            $script = 'session/session';
+        } else {
+            $script = 'access/access';
+        }
 
-        $this->display('create-session', [
-            'title' => 'Crée ta séance !',
-            'script' => 'session/create',
+        $this->checkForm();
+
+        $this->display('session', [
+            'title' => 'GymNotes',
+            'script' => $script,
             'user' => $user
         ]);
 

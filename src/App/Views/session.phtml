@@ -1,54 +1,18 @@
-<div>
 
-    <div id="login">
 
-        <p>Se connecter</p>
+<section id="start-or-create">
 
-        <form action="" method="post">
-
-            <label for="mail">Votre adresse mail</label>
-            <input type="text" name="mail">
-
-            <label for="password">Votre mot de passe</label>
-            <input type="password" name="password">
-
-        </form>
-
-        <button type="submit">Se connecter</button>
-
+    <?php if (isset($_SESSION['user_id'])) : ?>
+    <div id="buttons-session-container">
+            <a class="gymnotes-btn" href="<?= url('/start-session') ?>">J'ai déjà ma séance de prête</a>
+            <a class="gymnotes-btn" href="<?= url('/create-session') ?>">Je crée mes séances</a>
     </div>
 
-    <div id="register">
+    <?php else : ?>
 
-        <p>Pas encore inscrit ?</p>
+    <p class="require-log">Veuillez vous connecter pour accéder à cette fonctionnalité.</h3>
+        <?php require 'userform.phtml' ?>
 
-        <form action="" method="post">
+    <?php endif; ?>
 
-            <label for="lastname">Nom</label>
-            <input type="text" name="lastname" placeholder="Votre nom" required>
-
-            <label for="firstname">Prénom</label>
-            <input type="text" name="firstname" placeholder="Votre prénom" required>
-
-            <label for="mail">Adresse mail</label>
-            <input type="text" name="mail" required>
-
-            <select name="gender" required>
-                <option value="male">Homme</option>
-                <option value="female">Femme</option>
-            </select>
-
-            <select name="age" id="age" required>
-
-            </select>
-
-            <label for="password">Votre mot de passe</label>
-            <input type="password" name="password" required>
-
-        </form>
-
-        <button type="submit">S'inscrire</button>
-
-    </div>
-
-</div>
+</section>

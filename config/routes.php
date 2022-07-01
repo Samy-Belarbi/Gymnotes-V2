@@ -21,6 +21,11 @@ return [
         'show'
     ],
 
+    '/session' => [
+        'App\Controllers\SessionController',
+        'show'
+    ],
+
     '/create-session' => [
         'App\Controllers\CreateSessionController',
         'show'

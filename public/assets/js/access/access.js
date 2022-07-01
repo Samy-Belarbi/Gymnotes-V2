@@ -4,7 +4,7 @@ const main = () => {
     insertAgeOptions();
 }
 
-const insertAgeOptions = () => {
+export const insertAgeOptions = () => {
 
     const selectAge = document.getElementById("age");
 

@@ -8,6 +8,7 @@ import { check, labels } from "./checkRadio.js";
 
 import { responsiveSlider } from "./mobileVersion.js";
 
+
 const main = () => {
 
     if (window.innerWidth > 1000) {
@@ -18,10 +19,10 @@ const main = () => {
         responsiveSlider();
     }
 
-        // HAMBURGER MENU
-        hamburgerButton.addEventListener("click", activeButton);
-        blackBackground.addEventListener("click", activeButton);
-    
+    // HAMBURGER MENU
+    hamburgerButton.addEventListener("click", activeButton);
+    blackBackground.addEventListener("click", activeButton);
+
 }
 
 addEventListener("load", main);

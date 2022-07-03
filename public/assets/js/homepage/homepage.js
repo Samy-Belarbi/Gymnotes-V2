@@ -43,4 +43,4 @@ const main = () => {
 
 }
 
-window.addEventListener("load", main);
+addEventListener("load", main);

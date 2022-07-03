@@ -14,10 +14,9 @@ class CreateSessionController extends AbstractController
         if (isset($_SESSION['user_id'])) {
             $userManager = new UserManager();
             $user = $userManager->findById($_SESSION['user_id']);
-        } 
-        // else {
-        //     header('Location: ' . url('/login'));
-        // }
+        } else {
+            $this->redirect('/session');
+        }
 
         $this->display('create-session', [
             'title' => 'Crée ta séance !',

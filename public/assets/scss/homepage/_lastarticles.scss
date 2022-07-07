@@ -1,0 +1,109 @@
+@mixin classicTransi {
+    transition: all 0.3s ease-in-out;
+}
+
+#last-articles {
+    background-color: black;
+    padding: 8em 0em 4em;
+    align-items: center;
+    width: 100%;
+
+    gap: 20px;
+
+    h3 {
+        font-family: "Jumper";
+        color: white;
+        display: inline-block;
+
+        font-size: 3em;
+
+        span {
+            font-size: 1em;
+            font-family: "Jumper";
+            display: inline-block;
+            color: var(--gymBlue);
+        }
+    }
+
+    #slider-container {
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+
+
+        gap: 2em;
+
+        .slides {   
+            width: 100%;
+            flex-direction: row;
+            padding: 2em 0em;
+
+            .slide {
+                min-width: 100%;
+                flex-direction: row;
+                justify-content: space-evenly;
+                div {
+                    max-width: 25%;
+                    cursor: pointer;
+                    img {
+                        width: 100%;
+                        transition: transform 0.3s ease-in-out;
+                        &:hover {
+                            transform: scale(1.05);
+                            border: 1px solid var(--gymBlue);
+                        }
+                    }
+                }
+            }
+        }
+
+        #button-left,
+        #button-right {
+            position: absolute;
+            padding: 0;
+            top: 35%;
+            height: auto;
+            cursor: pointer;
+            background-color: transparent;
+            font-size: 30px;
+            border: none;
+            color: white;
+        }
+
+        #button-left {
+            left: 20px;
+        }
+
+        #button-right {
+            right: 20px;
+        }
+
+        .circles {
+            flex-direction: row;
+            gap: 5px;
+            span {
+                width: 10px;
+                height: 10px;
+                border-radius: 5px;
+                background-color: white;
+                opacity: 0.5;
+                cursor: pointer;
+                @include classicTransi;
+            }
+
+            :nth-child(1) {
+                opacity: 1;
+            }
+        }
+
+    }
+  
+
+}
+
+
+@media (max-width: 769px) {
+    #last-articles {
+        padding-top: 4em;
+    }
+}

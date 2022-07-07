@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= $title ?></title>
+    <link rel="stylesheet" href="../public/assets/css/style.css">
+    <script src="../public/assets/js/<?= $script ?>.js" type="module"></script>
+</head>
+
+<body>
+
+    <div id="black-background"></div>
+
+    <button type="button" id="hamburger-button">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </button>
+
+    <header id="header">
+
+        <nav id="navbar">
+
+            <div id="logo-navbar">
+                <img src="../public/assets/icons/gymnotes-logo.png" alt="logo-gymnotes">
+            </div>
+
+            <ul>
+                <li><a href="<?= url('/') ?>">Accueil</a></li>
+                <li><a href="<?= url('/articles') ?>">Articles</a></li>
+                <li><a href="<?= url('/session') ?>" class="lets-go-btn">LET'S GO</a></li>
+                <li><a href="<?= url('/tracker') ?>">Tracker</a></li>
+
+                <?php if (!isset($user)) : ?>
+
+                    <li><a href="<?= url('/access') ?>">Connexion / Inscription</a></li>
+
+                <?php else : ?>
+
+                    <li>
+                        <a href="<?= url('/profile') . '?id=' . htmlentities($user->getId()) ?>">
+                            <?= htmlentities($user->getFirstName()) ?>
+                        </a>
+                    </li>
+
+                <?php endif; ?>
+
+                <span class="indicator"></span>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main>
+        <a id="top"></a>
+        <?php require $template . '.phtml'; ?>
+    </main>
+
+    <footer>
+
+        <a href="#top" class="return-to-top">REVENIR EN HAUT DE LA PAGE ↑</a>
+
+        <div class="footer-container">
+
+            <div class="logo-container">
+                <img src="../public/assets/icons/gymnotes-logo.png" alt="logo-gymnotes">
+                <h2>GymNotes</h2>
+            </div>
+
+            <div class="nav-footer">
+
+                <div class="footer-bloc">
+
+                    <div>
+                        <h4>Nos services</h4>
+                    </div>
+
+                    <div class="link-footer-container">
+                        <a href="">Démarrer ma séance</a>
+                        <a href="">Tracker</a>
+                        <a href="">Coaching</a>
+                        <a href="">Générateur de programmes</a>
+                    </div>
+
+                </div>
+
+                <div class="footer-bloc">
+                    <div>
+                        <h4>À propos</h4>
+                    </div>
+
+                    <div class="link-footer-container">
+                        <a href="">Qui sommes-nous ?</a>
+                        <a href="">Notre équipe</a>
+                        <a href="">Nous contacter</a>
+                        <a href="">Nous rejoindre</a>
+                    </div>
+
+                </div>
+
+                <div class="footer-bloc">
+                    <div>
+                        <h4>CGV & CGU</h4>
+                    </div>
+
+                    <div class="link-footer-container">
+                        <a href="">CGV</a>
+                        <a href="">CGU</a>
+                        <a href="">Politique de confidentialité</a>
+                        <a href="">Utilisation des cookies</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <p>Copyright © 2022 GymNotes - Tous droits réservés.</p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

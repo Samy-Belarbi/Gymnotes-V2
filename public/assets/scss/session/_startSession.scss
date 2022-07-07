@@ -1,0 +1,91 @@
+#start-session-container {
+    width: 100%;
+    background-color: var(--gymBlack);
+    align-items: center;
+    justify-content: center;
+    height: 800px;
+
+    button {
+        border: none;
+        font-weight: 900;
+        border-radius: 5px;
+        padding: 0.2em 1em;
+        cursor: pointer;
+        color: white;
+    }
+
+    .start-exercice {
+        background-color: var(--gymBlue);
+        line-height: 1em;
+        padding: 1em;
+        border-radius: 50%;
+        font-size: 100px;
+    }
+
+    #exercice-container {
+        display: none;
+        align-items: center;
+        width: fit-content;
+        padding: 2em;
+        border-radius: 20px;
+        gap: 20px;
+
+        background-color: white;
+
+        .no-exercices {
+            display: none;
+            align-items: center;
+            gap: 1em;
+            .links {
+                gap: 1em;
+                align-items: center;
+            }
+        }
+
+        .exercice-infos {
+            align-items: center;
+            gap: 10px;
+            .exercice-name {
+                font-size: 30px;
+            }
+    
+            .info {
+                font-size: 20px;
+                font-weight: 500;
+            }
+    
+            .end-set {
+                background-color: black;
+            }
+        }
+
+        .timer {
+            align-items: center;
+            display: none;
+            justify-content: center;
+            gap: 10px;
+            div {
+                gap: 10px;
+                flex-direction: row;
+
+                span {
+                    font-size: 50px;
+                    line-height: 1em;
+                }
+
+                .btn-pause {
+                    background-color: red;
+                }
+
+                .btn-reset {
+                    background-color: grey;
+                }
+
+                .btn-end-rest {
+                    background-color: black;
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,48 @@
+
+<section id="start-session-container">
+
+            <button class="start-exercice">GO</button>
+
+    <div id="exercice-container">
+
+            <div class="no-exercices">
+                    <p>Vous n'avez pas d'exercices pour aujourd'hui !</p>
+                    <div class="links">
+                        <a href="<?= url('/create-session') ?>">Je crée mes séances</a>
+                        <p>ou</p>
+                        <a href="<?= url('/profile') ?>">Je consulte mes séances de la semaine</a>
+                    </div>
+                    
+            </div>
+
+            <div class="exercice-infos">
+                <span class="exercice-name">Nom de l'exercice</span>
+
+                <span class="reps info">test</span>
+
+                <span class="sets info">test</span>
+
+                <span class="performance info">test</span>
+
+                <button class="end-set">J'ai fini ma série !</button>
+            </div>
+
+            <div class="timer">
+
+                <div class="digits">
+                    <span class="minutes">00</span>
+                    <span>:</span>
+                    <span class="seconds">00</span>
+                </div>
+
+                <div class="buttons">
+                        <button class="btn-pause">Pause</button>
+                        <button class="btn-reset">Reset</button>
+                        <button class="btn-end-rest">Terminer</button>
+                </div>
+
+            </div>
+
+    </div>
+
+</section>

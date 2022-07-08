@@ -38,7 +38,7 @@
             }
 
             a {
-                padding: 0.5em 0em 0.3em;
+                padding: 0.3em 0em 0.3em;
                 width: 100%;
                 text-align: center;
                 font-family: "Jumper";
@@ -55,8 +55,20 @@
     }
 }
 
+@media (max-width: 1440px) {
+    #section-4-homepage {
+        #offers-container {
+            div {
+                h4 {
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+}
 
-@media (max-width: 769px) {
+
+@media (max-width: 1189px) {
     #section-4-homepage {
         #offers-container {
             flex-direction: column;
@@ -67,7 +79,7 @@
                 width: 80%;
 
                 h4 {
-                    font-size: 2em;
+                    font-size: 1.5em;
                 }
 
                 p {
@@ -76,9 +88,29 @@
 
                 a {
                     font-size: 20px;
+                    padding-left: 1em;
+                    padding-right: 1em;
                 }
             }
         }
 
+    }
+}
+
+@media (max-width: 700px) {
+    #section-4-homepage {
+       h3 {
+        font-size: 3em;
+       }
+
+       #offers-container {
+
+
+        div {
+            a {
+                font-size: 16px;
+            }
+        }
+    }
     }
 }

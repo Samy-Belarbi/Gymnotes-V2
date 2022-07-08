@@ -88,3 +88,40 @@ footer {
 
 
 }
+
+
+@media (max-width: 800px) {
+    footer {
+
+        height: fit-content;
+    
+        .footer-container {
+            height: fit-content;
+
+            .logo-container {
+                justify-content: center;
+                padding: 0;
+            }
+            .nav-footer {
+                flex-direction: column;
+
+                .footer-bloc {
+                   width: 100%;
+    
+                    div {
+                        width: 70%;
+                        align-items: center;
+                    }
+                }
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+        }
+    
+    
+    }
+
+}

@@ -98,6 +98,7 @@
 
                 ul {
                     align-items: center;
+
                     li {
                         font-size: 1.8em;
                         font-weight: 300;
@@ -134,7 +135,7 @@
             }
 
             .gymnotes-btn {
-                padding: 0.5em 1em 0.3em;
+                padding: 0.3em 1em 0.3em;
                 font-size: 1.2em;
             }
         }
@@ -144,7 +145,7 @@
 }
 
 // MACBOOK 13
-@media (max-width: 1280px) {
+@media (max-width: 1440px) {
     #section-3-homepage {
         #cards-homepage {
             align-items: center;
@@ -157,9 +158,30 @@
 
             #cards-title {
                 justify-content: center;
-                gap: 20px;
+                flex-direction: row-reverse;
+                gap: 40px;
                 #titles {
                     padding: 100px 0 0 ;
+                }
+            }
+          
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    #section-3-homepage {
+        #cards-homepage {
+            flex-direction: column;
+
+            #cards-images {
+                gap: 50px;
+            }
+
+            #cards-title {
+                padding: 0;
+                #titles {
+                    padding: 0;
                 }
             }
           
@@ -176,17 +198,15 @@
             width: 80%;
         }
         #cards-homepage {
-            flex-direction: column;
-            gap: 50px;
 
             #cards-images {
-                max-width: 80%;
+                display: none;
             }
+
             #cards-title {
-                padding: 0;
-                gap: 60px;
+                flex-direction: column;
                 #titles {
-                    padding: 0;
+
                     ul {
                         li {
                             font-size: 2em;

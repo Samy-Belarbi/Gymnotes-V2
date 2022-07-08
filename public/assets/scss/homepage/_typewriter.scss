@@ -141,13 +141,13 @@
 
     .gymnotes-btn {
         margin-top: 8em;
-        padding: 0.5em 1em 0.3em 1em;
+        padding: 0.3em 1em 0.3em 1em;
         z-index: 20;
     }
 }
 
 // MACBOOK 13
-@media (max-width: 1280px) {
+@media (max-width: 1440px) {
     #section-1-homepage {
         padding: 10rem 0em;
 
@@ -155,6 +155,33 @@
             margin-top: 6em;
         }
     }
+}
+
+@media (max-width: 1110px) {
+    #section-1-homepage {
+        #typewriter-container {
+            .typewriter {
+                .session-container {
+                    padding-left: 4em;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 1020px) {
+    #section-1-homepage {
+        #typewriter-container {
+            height: fit-content;
+            .typewriter {
+                .step-number {
+                    display: none;
+                }
+            }
+        }
+    }
+
 }
 
 // IPAD
@@ -193,4 +220,47 @@
             }
         }
     }
+}
+
+
+// MOBILE 
+@media (max-width: 561px) {
+    #section-1-homepage {
+        #typewriter-container {
+            gap: 100px;
+            .typewriter {
+                padding: 0;
+                .session-container {
+                    width: 100%;
+                    align-items: center;
+
+                    &:hover {
+                        h2 {
+                            padding-left: 0;
+                            transform: scale(1);
+                            & + p {
+                                display: none;
+                            }
+        
+                            &::before {
+                                transform: scale(0);
+                            }
+                        }
+        
+                        + .step-number {
+                            p {
+                                transform: scale(1);
+                            }
+        
+                            span {
+                                transform: scale(1);
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
 }

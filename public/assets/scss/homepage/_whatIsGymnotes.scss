@@ -44,7 +44,7 @@
 
         .gymnotes-btn {
             width: fit-content;
-            padding: 0.5em 4em 0.3em;
+            padding: 0.3em 4em 0.3em;
 
             -webkit-box-shadow: inset 0px 0px 0px 2px var(--gymYellow); 
             box-shadow: inset 0px 0px 0px 2px var(--gymYellow);
@@ -90,7 +90,9 @@
 
         #what-is-gymnotes {
             width: 80%;
-
+            h3 {
+                font-size: 2.5em;
+            }
             h4 {
                 font-size: 2em;
             }
@@ -99,6 +101,10 @@
                 width: 80%;
                 font-size: 20px;
             }
+        }
+
+        #phone-container {
+            width: 60%;
         }
     }
 }

@@ -4,3 +4,4 @@
 07/07/2022 18:21:29 : SQLSTATE[HY000] [2002] Connection refused
 07/07/2022 18:21:32 : SQLSTATE[HY000] [2002] Connection refused
 07/07/2022 18:21:34 : SQLSTATE[HY000] [2002] Connection refused
+09/07/2022 17:07:50 : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sql11505084.users' doesn't exist

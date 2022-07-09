@@ -1,1 +1,9 @@
-<a href="<?= url('/logout') ?>">Se déconnecter</button>
+<section id="profile-section">
+
+    <p class="welcome-user">Bonjour <?= htmlentities($user->getFirstName()) ?> !</p>
+
+    <a href="<?= url('/logout') ?>">Se déconnecter</button>
+
+</section>
+
+

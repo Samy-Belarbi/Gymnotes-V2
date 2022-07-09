@@ -25,6 +25,18 @@
     }
 }
 
+@media (max-width: 430px) {
+    #start-or-create {
+    
+        #buttons-session-container {
+            .gymnotes-btn {
+                font-size: 16px;
+            }
+        }
+    }
+
+}
+
 
 // SELECTION DES JOURS
 
@@ -45,7 +57,7 @@
 
         label {
             height: 250px;
-            width: 12%;
+            min-width: 100px;
             background-color: rgb(188, 188, 188);
             align-items: center;
             justify-content: center;
@@ -62,6 +74,50 @@
             color: white;
         }
     }
+}
+
+@media (max-width: 1440px) {
+    #days-container {
+        padding: 6em;
+        height: fit-content;
+        flex-wrap: wrap;
+        
+        #days {
+            width: 100%;
+            gap: 30px;
+        }
+    }
+
+}
+
+@media (max-width: 1110px) {
+    #days-container {
+        padding: 2em 1em;
+       .h3-titles {
+        text-align: center;
+       }
+    }
+
+}
+
+@media (max-width: 920px) {
+    #days-container {
+       .h3-titles {
+        font-size: 30px;
+       }
+
+       #days {
+        flex-direction: column;
+        align-items: center;
+        label {
+            height: fit-content;
+            min-width: 50%;
+            max-width: 50%;
+            padding: 1em;
+        }
+       }
+    }
+
 }
 
 // SESSIONS CONTAINER
@@ -129,10 +185,68 @@
                 }
             }
         }
+        
+        .gymnotes-btn {
+            padding: 0.3em 1em;
+            margin: 2em 0;
+        }
     }
 
     button {
         width: fit-content;
         cursor: pointer;
+    }
+}
+
+@media (max-width: 1440px) {
+    #sessions-container {
+        form {
+            #sessions {
+                .session {
+                    .exercices {
+                        .exercice {
+                            min-width: 40%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 610px) {
+    #sessions-container {
+
+        .h3-titles {
+            text-align: center;
+        }
+
+        form {
+            #sessions {
+                .session {
+                    .exercices {
+                        .exercice {
+                            min-width: 350px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 412px) {
+    #sessions-container {
+        form {
+            #sessions {
+                .session {
+                    .exercices {
+                        .exercice {
+                            min-width: 250px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -190,49 +190,16 @@
         padding: 0 0 10rem;
         #typewriter-container { 
             padding: 10em 0em 0em;
+            gap: 100px;
             .typewriter {
-                justify-content: space-between;
+                justify-content: center;
                 padding: 0 6em;
                 .session-container {
                     padding: 0;
 
                     h2 {
-                        font-size: 2em;
+                        font-size: 1.5em;
                     }
-
-                    &:hover {
-                        p {
-                            font-size: 1em;
-                            width: 70%;
-                        }
-                    }
-                }
-            }
-
-            .step-number {
-                
-                p {
-                    font-size: 2em;
-                }
-                span {
-                    display: none;
-                }
-            }
-        }
-    }
-}
-
-
-// MOBILE 
-@media (max-width: 561px) {
-    #section-1-homepage {
-        #typewriter-container {
-            gap: 100px;
-            .typewriter {
-                padding: 0;
-                .session-container {
-                    width: 100%;
-                    align-items: center;
 
                     &:hover {
                         h2 {
@@ -257,6 +224,32 @@
                             }
                         }
                     }
+                }
+            }
+
+            .step-number {
+                
+                p {
+                    font-size: 2em;
+                }
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+// MOBILE 
+@media (max-width: 561px) {
+    #section-1-homepage {
+        #typewriter-container {
+            .typewriter {
+                padding: 0;
+                .session-container {
+                    width: 100%;
+                    align-items: center;
                 }
 
             }

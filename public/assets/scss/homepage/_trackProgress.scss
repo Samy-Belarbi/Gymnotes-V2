@@ -192,10 +192,11 @@
 
 @media (max-width: 769px) {
     #section-3-homepage {
-        padding: 6em 0;
+        padding: 3em 0;
 
         h3 {
             width: 80%;
+            font-size: 2em;
         }
         #cards-homepage {
 
@@ -209,10 +210,18 @@
 
                     ul {
                         li {
-                            font-size: 2em;
+                            font-size: 1em;
+                        }
+                    }
+
+                    div {
+                        span {
+                            width: 10px;
+                            height: 10px;
                         }
                     }
                 }
+
             }
         }
 

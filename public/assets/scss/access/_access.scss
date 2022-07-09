@@ -18,7 +18,7 @@
         justify-content: center;
         background-color: aliceblue;
         height: 100%;
-        width: 30%;
+        width: 40%;
         gap: 20px;
         padding: 2em 0em;
 
@@ -59,4 +59,26 @@
         }
     }
 
+}
+
+
+@media (max-width: 1150px) {
+    #login-register {
+        flex-direction: column;
+
+        #login, #register {
+            width: 80%;
+
+            p {
+                text-align: center;
+                font-size: 27px;
+            }
+
+            form {
+                input, select {
+                    width: 80%;
+                }
+            }
+        }
+    }
 }

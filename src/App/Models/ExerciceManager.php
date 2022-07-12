@@ -25,20 +25,24 @@ class ExerciceManager extends AbstractModel {
         ]);
         
     }
-    
-    function findAllExercicesById(int $id) : ?ExerciceModel {
 
-        $query = $this->db->getResults('SELECT * FROM exercices WHERE User_id = :id', [
-            'id' => $id
-        ]);
-        
-        if ($query === null) {
-            return null;
-        }
-        
-        return UserModel::createUserFromMysqlData($query);
+    public static function createExerciceFromMysqlData(array $data) : ExerciceModel {
+        $exercice = new ExerciceModel();
+        $exercice->setId($data['ID']);
+        $exercice->setExerciceName($data['Name']);
+        $exercice->setPlacement($data['Placement']);
+        $exercice->setSets($data['Sets']);
+        $exercice->setReps($data['Reps']);
+        $exercice->setSetRest($data['Exercice_rest']);
+        $exercice->setExerciceRest($data['Exercice_rest']);
+        $exercice->setPerformance($data['Performance']);
+        $exercice->setDay($data['Day']);
+        $exercice->setWeek($data['Week']);
+        $exercice->setUserId($data['User_id']);
 
+        return $exercice;
     }
+    
 
     function getExercicesOfTheDay(int $id) : ?array {
         $day = $this->getDay();

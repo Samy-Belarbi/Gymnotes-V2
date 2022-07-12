@@ -18,23 +18,6 @@ class ExerciceModel extends AbstractModel
     private int $week;
     private int $userId;
 
-    public static function createExerciceFromMysqlData(array $data) : ExerciceModel {
-        $exercice = new ExerciceModel();
-        $exercice->setId($data[0]['ID']);
-        $exercice->setExerciceName($data[0]['Name']);
-        $exercice->setPlacement($data[0]['Placement']);
-        $exercice->setSets($data[0]['Sets']);
-        $exercice->setReps($data[0]['Reps']);
-        $exercice->setSetRest($data[0]['Exercice_rest']);
-        $exercice->setExerciceRest($data[0]['Exercice_rest']);
-        $exercice->setPerformance($data[0]['Performance']);
-        $exercice->setDay($data[0]['Day']);
-        $exercice->setWeek($data[0]['Week']);
-        $exercice->setUserId($data[0]['User_id']);
-
-        return $exercice;
-    }
-
     // SETTERS 
 
     public function setId(int $id) {

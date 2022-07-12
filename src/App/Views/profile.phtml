@@ -2,8 +2,66 @@
 
     <p class="welcome-user">Bonjour <?= htmlentities($user->getFirstName()) ?> !</p>
 
-    <a href="<?= url('/logout') ?>">Se déconnecter</a>
-    
+    <div class="user-infos">
+
+        <p>Vos informations</p>
+
+        <div class="editable-infos">
+            <p class="user-info"><?= htmlentities($user->getFirstName()) . ' ' . htmlentities($user->getLastName()) ?></p>
+            <button class="edit-button">Edit</button>
+        </div>
+        
+        <div class="editable-infos">
+            <?php if ($user->getGender() === 'male') : ?>
+                <p>Homme</p>
+            <?php else : ?>
+                <p>Femme</p>
+            <?php endif; ?>
+            <button class="edit-button">Edit</button>
+        </div>
+        
+        <div class="editable-infos">
+            <p><?= htmlentities($user->getAge()) ?> ans</p>
+            <button class="edit-button">Edit</button>
+        </div>
+        
+        <div class="editable-infos">
+            <p><?= htmlentities($user->getMail()) ?></p>
+            <button class="edit-button">Edit</button>
+        </div>
+            
+        <a href="<?= url('/logout') ?>">Se déconnecter</a>
+
+    </div>
+
+    <div class="user-exercices">
+
+                <?php if (isset($exercices)) : ?>
+
+                    <h2>Vos exercices du jour :</h2>
+
+
+                    <div class="day-exercices">
+
+                        <h3><?= htmlentities($exercices[0]->getDay()) ?></h3>
+
+                    <?php foreach ($exercices as $exercice) : ?>
+
+                        <div class="exercice">
+                            <p><?= htmlentities($exercice->getExerciceName()) ?></p>
+                            <p>Séries : <?=htmlentities($exercice->getSets()) ?></p>
+                            <p>Répétitions : <?= htmlentities($exercice->getReps()) ?></p>
+                            <p>Repos entre chaque série : <?= htmlentities($exercice->getSetRest()) ?></p>
+                            <p>Performances : <?= htmlentities($exercice->getPerformance()) ?></p>
+                        </div>
+
+                    <?php endforeach; ?>
+
+                    </div>
+
+                <?php else : ?>
+                    <p>Vous n'avez pas d'exercices aujourd'hui !</p>
+                <?php endif; ?>
+    </div>
+
 </section>
-
-

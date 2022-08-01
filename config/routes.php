@@ -7,7 +7,22 @@ return [
     ],
 
     '/articles' => [
-        'App\Controllers\HomeController',
+        'App\Controllers\ConstructController',
+        'show'
+    ],
+
+    '/tracker' => [
+        'App\Controllers\ConstructController',
+        'show'
+    ],
+
+    '/team' => [
+        'App\Controllers\ConstructController',
+        'show'
+    ],
+
+    '/free-month' => [
+        'App\Controllers\ConstructController',
         'show'
     ],
 

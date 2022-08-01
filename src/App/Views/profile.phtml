@@ -8,7 +8,6 @@
 
         <div class="editable-infos">
             <p class="user-info"><?= htmlentities($user->getFirstName()) . ' ' . htmlentities($user->getLastName()) ?></p>
-            <button class="edit-button">Edit</button>
         </div>
         
         <div class="editable-infos">
@@ -17,17 +16,14 @@
             <?php else : ?>
                 <p>Femme</p>
             <?php endif; ?>
-            <button class="edit-button">Edit</button>
         </div>
         
         <div class="editable-infos">
             <p><?= htmlentities($user->getAge()) ?> ans</p>
-            <button class="edit-button">Edit</button>
         </div>
         
         <div class="editable-infos">
             <p><?= htmlentities($user->getMail()) ?></p>
-            <button class="edit-button">Edit</button>
         </div>
             
         <a href="<?= url('/logout') ?>">Se déconnecter</a>
@@ -36,7 +32,7 @@
 
     <div class="user-exercices">
 
-                <?php if (isset($exercices)) : ?>
+                <?php if (!empty($exercices)) : ?>
 
                     <h2>Vos exercices du jour :</h2>
 

@@ -7,5 +7,12 @@
     background-color: black;
     color: white;
 
-    
+    .user-infos {
+        align-items: center;
+        gap: 1em;
+
+        a {
+            color: var(--gymYellow);
+        }
+    }
 }

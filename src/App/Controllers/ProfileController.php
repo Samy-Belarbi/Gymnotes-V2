@@ -5,7 +5,7 @@ namespace App\Controllers;
 use Library\Core\AbstractController;
 use App\Models\UserManager;
 use App\Models\ExerciceManager;
-use App\Models\ExerciceModel;
+use App\Models\UserModel;
 
 class ProfileController extends AbstractController
 {
@@ -28,6 +28,19 @@ class ProfileController extends AbstractController
                 }
             }
 
+            if (!empty($_POST) && strlen($_POST['password']) > 7) {
+                $userEditPassword = new UserModel();
+                $userEditPassword->setPlainPassword(password_hash($_POST['password'], PASSWORD_ARGON2ID));
+                $userEditPassword->setId($_SESSION['user_id']);
+
+                $userManager->updatePassword($userEditPassword);
+            }
+
+            if (!empty($_POST) && strlen($_POST['password']) <= 7) {
+                $_SESSION['short-password'] = 'Votre mot de passe doit comporter un minimum de 8 caractères.';
+            }
+
+
         } else {
             $this->redirect('/access');
             exit;
@@ -35,7 +48,7 @@ class ProfileController extends AbstractController
 
         $this->display('profile', [
             'title' => $user->getFirstName(),
-            'script' => 'profile/profile',
+            'script' => 'access/profile',
             'user' => $user,
             'exercices' => $exercices
         ]);

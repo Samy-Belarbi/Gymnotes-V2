@@ -46,4 +46,11 @@ class UserManager extends AbstractModel {
         
         return UserModel::createUserFromMysqlData($query);
     }
+
+    public function updatePassword(UserModel $user) {
+        $this->db->execute('UPDATE users SET password = :password WHERE ID = :id', [
+            'password' => $user->getPlainPassword(),
+            'id' => $user->getId()
+        ]);
+    }
 }

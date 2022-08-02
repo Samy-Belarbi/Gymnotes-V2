@@ -4,7 +4,7 @@
 
     <div class="user-infos">
 
-        <p>Vos informations</p>
+        <h4>Vos informations</h4>
 
         <div class="editable-infos">
             <p class="user-info"><?= htmlentities($user->getFirstName()) . ' ' . htmlentities($user->getLastName()) ?></p>
@@ -24,6 +24,17 @@
         
         <div class="editable-infos">
             <p><?= htmlentities($user->getMail()) ?></p>
+        </div>
+
+        <div class="edit-password">
+            <form action="" method="POST">
+                <input type="password" name="password">
+                    <?php if (isset($_SESSION['short-password'])) : ?>
+                        <?= $_SESSION['short-password'] ?>
+                        <?php unset($_SESSION['short-password']) ?>
+                    <?php endif; ?>
+                <button type="submit">Modifier</button>
+            </form>
         </div>
             
         <a href="<?= url('/logout') ?>">Se déconnecter</a>

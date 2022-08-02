@@ -55,7 +55,16 @@ class ExerciceManager extends AbstractModel {
         return $query;
     }
 
-    function getLastWeek(int $id) : int {
+    public function deleteDayExercice(int $id) {
+        $day = $this->getDay();
+        $this->db->execute('DELETE FROM exercices WHERE User_id = :id AND Day = :day AND WEEK = :week', [
+            'id' => $id,
+            'day' => $day,
+            'week' => $this->getLastWeek($id)
+        ]);
+    }
+
+    public function getLastWeek(int $id) : int {
         $query = $this->db->getResults('SELECT Week FROM exercices WHERE User_id = :id ORDER BY Week DESC LIMIT 1', [
             'id' => $id
         ]);
@@ -67,7 +76,7 @@ class ExerciceManager extends AbstractModel {
         return $query[0]['Week'];
     }
 
-    function getDay() : string {
+    public function getDay() : string {
         $days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
         return $days[date('w')];
     }

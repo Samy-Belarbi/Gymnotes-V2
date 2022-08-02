@@ -33,7 +33,7 @@
                         <?= $_SESSION['short-password'] ?>
                         <?php unset($_SESSION['short-password']) ?>
                     <?php endif; ?>
-                <button type="submit">Modifier</button>
+                <button type="submit">Modifier votre mot de passe</button>
             </form>
         </div>
             
@@ -61,6 +61,11 @@
                             <p>Repos entre chaque série : <?= htmlentities($exercice->getSetRest()) ?></p>
                             <p>Performances : <?= htmlentities($exercice->getPerformance()) ?></p>
                         </div>
+
+                        <form action="" method="POST">
+                            <button type="submit" name="delete" value="delete">Supprimer l'exercice du jour</button>
+                        </form>
+
 
                     <?php endforeach; ?>
 

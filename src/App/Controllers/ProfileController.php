@@ -19,6 +19,11 @@ class ProfileController extends AbstractController
             $user = $userManager->findById($_SESSION['user_id']);
 
             $exerciceManager = new ExerciceManager();
+
+            if (isset($_POST['delete'])) {
+                $exerciceManager->deleteDayExercice($_SESSION['user_id']);
+            }
+            
             $exercicesData = $exerciceManager->getExercicesOfTheDay($_SESSION['user_id']);
 
             if (!empty($exercicesData)) {
@@ -28,7 +33,7 @@ class ProfileController extends AbstractController
                 }
             }
 
-            if (!empty($_POST) && strlen($_POST['password']) > 7) {
+            if (isset($_POST['password']) && strlen($_POST['password']) > 7) {
                 $userEditPassword = new UserModel();
                 $userEditPassword->setPlainPassword(password_hash($_POST['password'], PASSWORD_ARGON2ID));
                 $userEditPassword->setId($_SESSION['user_id']);
@@ -36,10 +41,9 @@ class ProfileController extends AbstractController
                 $userManager->updatePassword($userEditPassword);
             }
 
-            if (!empty($_POST) && strlen($_POST['password']) <= 7) {
+            if (isset($_POST['password']) && strlen($_POST['password']) <= 7) {
                 $_SESSION['short-password'] = 'Votre mot de passe doit comporter un minimum de 8 caractères.';
             }
-
 
         } else {
             $this->redirect('/access');

@@ -18,6 +18,7 @@ class ConstructController extends AbstractController
 
         $this->display('construction', [
             'title' => 'Articles',
+            'script' => 'construct/construct',
             'user' => $user
         ]);
 
